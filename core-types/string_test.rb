@@ -36,21 +36,22 @@ class StringTest < Minitest::Homework
 
   def test_upper_and_lower_case
     refute "abc".downcase == "abc".upcase
-    maybe "1, 2, 3".downcase == "1, 2, 3".upcase
-    maybe "%$#!!1!".downcase == "%$#!!1!".upcase
+    assert "1, 2, 3".downcase == "1, 2, 3".upcase
+    assert "%$#!!1!".downcase == "%$#!!1!".upcase
   end
 
   def test_chop
-    assert_equal __, "hello!!!".chop
-    assert_equal __, "hello?!".chop
-    assert_equal __, "hello.".chop
-    assert_equal __, "hello".chop
+    assert_equal "hello!!", "hello!!!".chop
+    assert_equal "hello?", "hello?!".chop
+    assert_equal "hello", "hello.".chop
+    assert_equal "hell", "hello".chop
   end
 
   def test_chomp
-    assert_equal __, "go\n\n".chomp
-    assert_equal __, "go\n".chomp
-    assert_equal __, "go".chomp
+    #have some questions about this one
+    assert_equal "go\n", "go\n\n".chomp
+    assert_equal "go", "go\n".chomp
+    assert_equal "go", "go".chomp
   end
 
   def test_delete
