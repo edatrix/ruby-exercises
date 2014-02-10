@@ -55,15 +55,15 @@ class StringTest < Minitest::Homework
   end
 
   def test_delete
-    assert_equal __, "eeny, meeny, miny, moe".delete("e")
-    assert_equal __, "eeny, meeny, miny, moe".delete("m")
-    assert_equal __, "eeny, meeny, miny, moe".delete("n")
+    assert_equal "ny, mny, miny, mo", "eeny, meeny, miny, moe".delete("e")
+    assert_equal "eeny, eeny, iny, oe", "eeny, meeny, miny, moe".delete("m")
+    assert_equal "eey, meey, miy, moe", "eeny, meeny, miny, moe".delete("n")
   end
 
   def test_reverse
-    assert_equal __, "ZOMG SO MUCH FUN!!1!".reverse
-    assert_equal __, "bubbly pies".reverse
-    assert_equal __, "racecar".reverse
+    assert_equal "!1!!NUF HCUM OS GMOZ", "ZOMG SO MUCH FUN!!1!".reverse
+    assert_equal "seip ylbbub", "bubbly pies".reverse
+    assert_equal "racecar", "racecar".reverse
   end
 
   def test_squeeze
