@@ -67,10 +67,10 @@ class StringTest < Minitest::Homework
   end
 
   def test_squeeze
-    assert_equal __, "Granny juggles puppies in the moonlight".squeeze
-    assert_equal __, "Sunny summer days playing hoops on the roof".squeeze('o')
-    assert_equal __, "You fool! You cannot choose to cook cheese with a spoon".squeeze('ne')
-    assert_equal __, "Her name      was Betty Moore".squeeze(" ")
+    assert_equal "Grany jugles pupies in the monlight", "Granny juggles puppies in the moonlight".squeeze
+    assert_equal "Sunny summer days playing hops on the rof", "Sunny summer days playing hoops on the roof".squeeze('o')
+    assert_equal "You fool! You canot choose to cook chese with a spoon", "You fool! You cannot choose to cook cheese with a spoon".squeeze('ne')
+    assert_equal "Her name was Betty Moore", "Her name      was Betty Moore".squeeze(" ")
   end
 
   def test_strip
