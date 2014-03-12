@@ -74,61 +74,62 @@ class StringTest < Minitest::Homework
   end
 
   def test_strip
-    assert_equal __, "   \n  \tto the    moon\n\n\t    ".strip
-    assert_equal __, "   \n  \tto the    moon\n\n\t    ".rstrip
+    skip
+    assert_equal "to the    moon", "   \n  \tto the    moon\n\n\t    ".strip
+    assert_equal "   to the    moon", "   \n  \tto the    moon\n\n\t    ".rstrip
     assert_equal __, "   \n  \tto the    moon\n\n\t    ".lstrip
   end
 
   def test_next
-    assert_equal __, "a".next
-    assert_equal __, "z".next
-    assert_equal __, "aa".next
-    assert_equal __, "az".next
-    assert_equal __, "zz".next
-    assert_equal __, "aA".next
-    assert_equal __, "zZ".next
+    assert_equal "b", "a".next
+    assert_equal "aa", "z".next
+    assert_equal "ab" , "aa".next
+    assert_equal "ba", "az".next
+    assert_equal "aaa", "zz".next
+    assert_equal "aB", "aA".next
+    assert_equal "aaA", "zZ".next
   end
 
   def test_length
-    assert_equal __, "".length
-    assert_equal __, "A".length
-    assert_equal __, "Ø".length
-    assert_equal __, "\n".length
-    assert_equal __, "AA".length
-    assert_equal __, "AAA".length
-    assert_equal __, "AAAA".length
-    assert_equal __, "     ".length
+    assert_equal 0, "".length
+    assert_equal 1, "A".length
+    assert_equal 1, "Ø".length
+    assert_equal 1, "\n".length
+    assert_equal 2, "AA".length
+    assert_equal 3, "AAA".length
+    assert_equal 4, "AAAA".length
+    assert_equal 5, "     ".length
   end
 
   def test_count
-    assert_equal __, "sound of fury signifying nothing".count('o')
-    assert_equal __, "David Cook is frankly unkind".count('aeiou')
+    assert_equal 3, "sound of fury signifying nothing".count('o')
+    assert_equal 8, "David Cook is frankly unkind".count('aeiou')
   end
 
   def test_shovel
-    assert_equal __, "" << ""
-    assert_equal __, "a" << "b"
-    assert_equal __, "hello" << "?"
-    assert_equal __, "hello" << 33
+    assert_equal "", "" << ""
+    assert_equal "ab", "a" << "b"
+    assert_equal "hello?", "hello" << "?"
+    assert_equal "hello!", "hello" << 33
   end
 
   def test_concat
-    assert_equal __, "".concat("")
-    assert_equal __, "a".concat("b")
-    assert_equal __, "hello".concat("?")
-    assert_equal __, "hello".concat(33)
+    assert_equal "", "".concat("")
+    assert_equal "ab", "a".concat("b")
+    assert_equal "hello?", "hello".concat("?")
+    assert_equal "hello!", "hello".concat(33)
   end
 
   def test_plus
-    assert_equal __, "" + ""
-    assert_equal __, "a" + "b"
-    assert_equal __, "hello" + "?"
+    assert_equal "", "" + ""
+    assert_equal "ab", "a" + "b"
+    assert_equal "hello?", "hello" + "?"
   end
 
   def test_multiply
-    assert_equal __, "" * 3
-    assert_equal __, "!" * 3
-    assert_equal __, "ho! " * 3
+    assert_equal "", "" * 3
+    assert_equal "!!!", "!" * 3
+    assert_equal "ho! ho! ho! ", "ho! " * 3
   end
 
   def test_center
