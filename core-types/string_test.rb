@@ -76,7 +76,7 @@ class StringTest < Minitest::Homework
   def test_strip
     skip
     assert_equal "to the    moon", "   \n  \tto the    moon\n\n\t    ".strip
-    assert_equal "   to the    moon", "   \n  \tto the    moon\n\n\t    ".rstrip
+    assert_equal __, "   \n  \tto the    moon\n\n\t    ".rstrip
     assert_equal __, "   \n  \tto the    moon\n\n\t    ".lstrip
   end
 
@@ -205,55 +205,55 @@ class StringTest < Minitest::Homework
 
   def test_square_brackets_equal
     s = "cut"
-    assert_equal __, s
+    assert_equal "cut", s
     s[0] = "y"
-    assert_equal __, s
+    assert_equal "yut", s
     s[-1] = "p"
-    assert_equal __, s
+    assert_equal "yup", s
     s[-1] = "k"
-    assert_equal __, s
+    assert_equal "yuk", s
     s[1] = "a"
-    assert_equal __, s
+    assert_equal "yak", s
   end
 
   def test_interpolation
     s = "world"
-    assert_equal __, "Hello, #{s}!"
+    assert_equal "Hello, world!", "Hello, #{s}!"
   end
 
   def test_format_specification
-    assert_equal __, "" % ""
-    assert_equal __, "Be %s" % "safe"
-    assert_equal __, "(%s) %s-%s" % ["800", "555", "1234"]
-    assert_equal __, "(%2d)" % 45
-    assert_equal __, "(%3d)" % 45
-    assert_equal __, "(%5d)" % 45
-    assert_equal __, "(%05d)" % 45
-    assert_equal __, "%{name} is %{age} years old." % {name: "Harry", age: "38"}
-    assert_equal __, "%{name} is %{age} years old." % {name: "Harry", age: "38"}
-    assert_equal __, "%<years>d years and %<months>.1f months" % {years: 10, months: 3.478}
+    assert_equal "", "" % ""
+    assert_equal "Be safe", "Be %s" % "safe"
+    assert_equal "(800) 555-1234", "(%s) %s-%s" % ["800", "555", "1234"]
+    assert_equal "(45)", "(%2d)" % 45
+    assert_equal "( 45)", "(%3d)" % 45
+    assert_equal "(   45)", "(%5d)" % 45
+    assert_equal "(00045)", "(%05d)" % 45
+    assert_equal "Harry is 38 years old.", "%{name} is %{age} years old." % {name: "Harry", age: "38"}
+    assert_equal "Harry is 38 years old.", "%{name} is %{age} years old." % {name: "Harry", age: "38"}
+    assert_equal "10 years and 3.5 months", "%<years>d years and %<months>.1f months" % {years: 10, months: 3.478}
   end
 
   def test_tr
-    assert_equal __, "would".tr('w', 'c')
-    assert_equal __, "should".tr('ou', 'ei')
-    assert_equal __, "write".tr('aeiou', '*')
-    assert_equal __, "GATTACA".tr('GCTA', 'CGUT')
-    assert_equal __, "1, 2, 3 GO!".tr('^A-Z', ' ')
-    assert_equal __, "1, 2, 3 GO!".tr('^A-Z', '')
+    assert_equal "could", "would".tr('w', 'c')
+    assert_equal "sheild", "should".tr('ou', 'ei')
+    assert_equal "wr*t*", "write".tr('aeiou', '*')
+    assert_equal "CTUUTGT", "GATTACA".tr('GCTA', 'CGUT')
+    assert_equal "        GO ", "1, 2, 3 GO!".tr('^A-Z', ' ')
+    assert_equal "GO", "1, 2, 3 GO!".tr('^A-Z', '')
   end
 
   def test_sub
-    assert_equal __, "kicking".sub('k', 't')
-    assert_equal __, "kicking".sub('f', 't')
-    assert_equal __, "kicking".sub('ki', 'to')
-    assert_equal __, "kicking".sub(/[aeiou]/, '*')
+    assert_equal "ticking", "kicking".sub('k', 't')
+    assert_equal "kicking", "kicking".sub('f', 't')
+    assert_equal "tocking", "kicking".sub('ki', 'to')
+    assert_equal "k*cking", "kicking".sub(/[aeiou]/, '*')
   end
 
   def test_gsub
-    assert_equal __, "kicking".gsub('k', 't')
-    assert_equal __, "kicking".gsub('f', 't')
-    assert_equal __, "kicking".gsub('ki', 'to')
-    assert_equal __, "kicking".gsub(/[aeiou]/, '*')
+    assert_equal "ticting", "kicking".gsub('k', 't')
+    assert_equal "kicking", "kicking".gsub('f', 't')
+    assert_equal "toctong", "kicking".gsub('ki', 'to')
+    assert_equal "k*ck*ng", "kicking".gsub(/[aeiou]/, '*')
   end
 end
