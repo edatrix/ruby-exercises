@@ -14,20 +14,20 @@ class TrickOrTreaterTest < Minitest::Test
   end
 
   def test_wears_a_different_costume
-    skip
+    # skip
     costume = Costume.new("Pony")
     trick_or_treater = TrickOrTreater.new(costume)
     assert_equal "Pony", trick_or_treater.dressed_up_as
   end
 
   def test_has_an_empty_bag_by_default
-    skip
+    # skip
     trick_or_treater = TrickOrTreater.new(Costume.new("Alien"))
     assert trick_or_treater.bag.empty?
   end
 
   def test_an_empty_bag_means_no_candy
-    skip
+    # skip
     trick_or_treater = TrickOrTreater.new(Costume.new("Knight"))
     refute trick_or_treater.has_candy?
   end
